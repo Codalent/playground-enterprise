@@ -1,7 +1,7 @@
-import ExternalIcon from '@/image/images/icons/icon-external.svg'
-import KrakendLogo from '@/image/images/logos/logo-krakend-bw.svg'
-import Image from 'next/image'
-import Link from 'next/link'
+import ExternalIcon from "@/image/images/icons/icon-external.svg";
+import KrakendLogo from "@/image/images/logos/logo-krakend-bw.svg";
+import Image from "next/image";
+import Link from "next/link";
 const Header = () => {
   return (
     <section className="bg-brand-neutral-900">
@@ -9,20 +9,24 @@ const Header = () => {
         <div className="relative px-0 py-4 lg:py-6  ">
           <div className="text-white flex items-center justify-between h-full">
             <div className="relative z-10">
-              <Image src={KrakendLogo} alt="KrakendLogo" />
+              <Image
+                src={KrakendLogo}
+                alt="KrakendLogo"
+                className="max-w-36 md:max-w-40 w-full"
+              />
             </div>
-            <div className="absolute inset-0 z-0 flex items-center justify-end">
-              <ul className="flex items-center justify-between">
-                <li className="mx-2 md:mx-4">
-                  <Link href={''} className="font-medium text-base">
+            <div className="flex items-center justify-end">
+              <ul className="flex gap-3 md:gap-6 items-center justify-between">
+                <li>
+                  <Link href={""} className="font-medium text-base">
                     <span className="flex items-center">
                       Docs
                       <Image src={ExternalIcon} alt="" />
                     </span>
                   </Link>
                 </li>
-                <li className="mx-2 md:mx-4">
-                  <Link href={''} className="font-medium text-base">
+                <li>
+                  <Link href={""} className="font-medium text-base">
                     <span className="flex items-center">
                       Website
                       <Image src={ExternalIcon} alt="" />
@@ -35,7 +39,7 @@ const Header = () => {
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;
