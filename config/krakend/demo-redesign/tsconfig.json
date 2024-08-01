@@ -32,7 +32,10 @@
         "./src/components/*"
       ],
       "@/image/*": [
-        "./public/*"
+        "./public/images/*"
+      ],
+      "@/data/*": [
+        "./public/data/*"
       ]
     }
   },

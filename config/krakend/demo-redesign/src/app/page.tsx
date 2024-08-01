@@ -1,9 +1,15 @@
+"use client";
+
 import { Layout } from "@/components/common";
-import BGPurplePattern from "@/image/images/background/bg-pattern-purple.webp";
+import { Integration, UseCases } from "@/components/Home";
+import { ArchitectureSvg } from "@/components/Svg";
+import BGPurplePattern from "@/image/background/bg-pattern-purple.webp";
 import Image from "next/image";
 import Link from "next/link";
-import { FC } from "react";
+import { FC, useState } from "react";
 const Page: FC<any> = () => {
+  const [currentTab, setCurrentTab] = useState("use-cases");
+
   return (
     <Layout>
       {/* Hero */}
@@ -34,18 +40,61 @@ const Page: FC<any> = () => {
           </div>
         </div>
       </section>
-      <section>
-        <div className="bg-brand-neutral-900">
-          <div></div>
-          <div></div>
+      {/* Integrations */}
+      <section className="section--xl bg-brand-neutral-900">
+        <div className="container--boxed   ">
+          <div className="flex flex-col md:flex-row items-stretch gap-8 justify-between">
+            <div className=" md:w-1/3 ">
+              <div className="flex items-center gap-1.5 mb-2.5">
+                <button
+                  className={`px-4 py-2 font-medium rounded-md rounded-l-full ${
+                    currentTab === "use-cases"
+                      ? "bg-white text-brand-neutral-900"
+                      : "bg-brand-neutral-600 text-brand-neutral-300"
+                  }`}
+                  onClick={() => setCurrentTab("use-cases")}
+                >
+                  Use-cases
+                </button>
+                <button
+                  className={`px-4 py-2 font-medium rounded-r-full rounded-l-md ${
+                    currentTab === "integrations"
+                      ? "bg-white text-brand-neutral-900"
+                      : "bg-brand-neutral-600 text-brand-neutral-300"
+                  }`}
+                  onClick={() => setCurrentTab("integrations")}
+                >
+                  Integrations
+                </button>
+              </div>
+              {currentTab === "use-cases" && <UseCases />}
+              {currentTab === "integrations" && <Integration />}
+            </div>
+            <div
+              className="h-auto"
+              style={{
+                width: "1px",
+                backgroundImage:
+                  "linear-gradient(to bottom, #0b0c10 0%, #545d78 25%, #545d78 51%, #545d78 75%, #0b0c10 100%)",
+              }}
+            />
+            <div className="flex-1 flex">
+              <ArchitectureSvg />
+            </div>
+          </div>
         </div>
       </section>
-      <section className="section--xl bg-brand-neutral-900">
+
+      {/* Questions */}
+      <section className="section--xl pt-0 bg-brand-neutral-900">
         <div className="container--boxed flex items-center flex-col ">
           <h2 className="text-center heading--h2 text-white mb-6 md:mb-8">
             Questions?
           </h2>
-          <Link href={"#"} className="button--primary">
+          <Link
+            href={"mailto:support@krakend.io?subject=Enterprise-docs"}
+            className="button--primary"
+          >
             Ask Support
           </Link>
         </div>
