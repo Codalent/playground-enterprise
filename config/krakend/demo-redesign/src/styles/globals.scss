@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+@import "./base/typography";
+@import "./base/utils";
+
 @import "./components/_container";
 @import "./components/_section";
 @import "./components/_buttons";
