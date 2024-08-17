@@ -7,6 +7,7 @@ import BGPurplePattern from "@/image/background/bg-pattern-purple.webp";
 import Image from "next/image";
 import Link from "next/link";
 import { FC, useState } from "react";
+
 const Page: FC<any> = () => {
   const [currentTab, setCurrentTab] = useState("use-cases");
 
@@ -40,6 +41,7 @@ const Page: FC<any> = () => {
           </div>
         </div>
       </section>
+
       {/* Integrations */}
       <section className="section--xl bg-brand-neutral-900">
         <div className="container--boxed   ">
@@ -78,7 +80,7 @@ const Page: FC<any> = () => {
                   "linear-gradient(to bottom, #0b0c10 0%, #545d78 25%, #545d78 51%, #545d78 75%, #0b0c10 100%)",
               }}
             />
-            <div className="flex-1 flex">
+            <div className="flex-1 flex items-start">
               <ArchitectureSvg />
             </div>
           </div>
