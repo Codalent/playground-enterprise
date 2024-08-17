@@ -42,11 +42,10 @@ const Page: FC<any> = () => {
         </div>
       </section>
 
-      {/* Integrations */}
-      <section className="section--xl bg-brand-neutral-900">
-        <div className="container--boxed   ">
+      <main className="section--xl bg-brand-neutral-900">
+        <div className="container--boxed">
           <div className="flex flex-col md:flex-row items-stretch gap-8 justify-between">
-            <div className=" md:w-1/3 ">
+            <div className="md:w-1/3 ">
               <div className="flex items-center gap-1.5 mb-2.5">
                 <button
                   className={`px-4 py-2 font-medium rounded-md rounded-l-full ${
@@ -72,6 +71,8 @@ const Page: FC<any> = () => {
               {currentTab === "use-cases" && <UseCases />}
               {currentTab === "integrations" && <Integration />}
             </div>
+
+            {/* Line */}
             <div
               className="h-auto"
               style={{
@@ -80,12 +81,16 @@ const Page: FC<any> = () => {
                   "linear-gradient(to bottom, #0b0c10 0%, #545d78 25%, #545d78 51%, #545d78 75%, #0b0c10 100%)",
               }}
             />
+
+            {/* Diagram */}
             <div className="flex-1 flex items-start">
-              <ArchitectureSvg />
+              <div className="sticky top-8 w-full">
+                <ArchitectureSvg />
+              </div>
             </div>
           </div>
         </div>
-      </section>
+      </main>
 
       {/* Questions */}
       <section className="section--xl pt-0 bg-brand-neutral-900">

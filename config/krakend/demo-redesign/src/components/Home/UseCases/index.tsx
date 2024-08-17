@@ -1,6 +1,7 @@
 import userCases from "@/data/krakend.json";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+
 const UseCases = () => {
   const [useCases, setUseCases] = useState<any>({});
 

@@ -12,18 +12,18 @@
   }
 
   .text--xl {
-    @apply md:text-xl font-medium;
+    @apply md:text-xl font-normal;
   }
 
   .text--lg {
-    @apply text-lg font-medium;
+    @apply text-lg font-normal;
   }
 
   .text--base {
-    @apply text-base font-medium;
+    @apply text-base font-normal;
   }
 
   .text--sm {
-    @apply text-sm font-medium;
+    @apply text-sm font-normal;
   }
 }
