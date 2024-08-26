@@ -52,9 +52,10 @@ const UseCases = () => {
                 </p>
                 <div className="flex flex-col gap-4">
                   {useCaseData[1].map((useCase: any, index: number) => {
+                    console.log(useCase);
                     return (
                       <Link
-                        href={useCase.endpoint}
+                        href={`/usecase/${useCase.custom_fields.slug}`}
                         className="text-white p-3 rounded-md"
                         key={index}
                         style={{ background: "#272B3A" }}
@@ -72,9 +73,10 @@ const UseCases = () => {
 
       <div className="flex flex-col gap-4">
         {useCases["others"].map((useCase: any, index: number) => {
+          console.log(useCase);
           return (
             <Link
-              href={useCase.endpoint}
+              href={`/usecase/${useCase.custom_fields.slug}`}
               key={index}
               className="text-white p-3 rounded-md inline-block overflow-auto"
               style={{ background: "#272B3A" }}

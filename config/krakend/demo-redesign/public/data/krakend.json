@@ -62,8 +62,9 @@
         }
       },
       "custom_fields": {
-        "name": "Feature: Aggregation + Basic transformation (filtering & mapping) + grouping",
-        "slug": "feature-aggregation-basic-transformation-filtering-and-mapping-grouping"
+        "tag": "Feature",
+        "name": "Aggregation + Basic transformation (filtering & mapping) + grouping",
+        "slug": "aggregation-basic-transformation-filtering-and-mapping-grouping"
       }
     },
     {
@@ -93,6 +94,11 @@
             "Aggregation"
           ]
         }
+      },
+      "custom_fields": {
+        "tag": "Feature",
+        "name": "One-liner advanced data manipulation (filter, sorting & remapping) with JMESPath Query Language",
+        "slug": "one-liner-advanced-data-manipulation-filter-sorting-remapping-with-JMESPath-query-language"
       }
     },
     {
@@ -122,11 +128,16 @@
             }
           }
         }
-      ]
+      ],
+      "custom_fields": {
+        "tag": "Feature",
+        "name": "Regular expression manipulation",
+        "slug": "regular-expression-manipulation"
+      }
     },
     {
       "@comment": "Feature: Security policy engine for requests, responses and claim checking",
-      "title": "Feature: Security policy engine for requests, responses and claim checking",
+      "title":"Feature: Security policy engine for requests, responses and claim checking",
       "endpoint": "/track-user",
       "@test_with": "curl -iG -H'Cookie: GDPR=yes' 'http://localhost:8080/track-user'",
       "input_headers": [
@@ -134,9 +145,7 @@
       ],
       "backend": [
         {
-          "host": [
-            "http://localhost:8080"
-          ],
+          "host": ["http://localhost:8080"],
           "url_pattern": "/__debug/cookie"
         }
       ],
@@ -152,24 +161,25 @@
             }
           }
         }
+      },
+      "custom_fields": {
+        "tag": "Feature",
+        "name": "Security policy engine for requests, responses and claim checking",
+        "slug": "security-policy-engine-for-requests-responses-and-claim-checking"
       }
     },
     {
       "@comment": "Feature: Aggregation + backend rate limiting + endpoint rate limiting",
-      "title": "Feature: Aggregation + backend rate limiting + endpoint rate limiting",
+      "title":"Feature: Aggregation + backend rate limiting + endpoint rate limiting",
       "endpoint": "/shop",
       "backend": [
         {
           "url_pattern": "/static/shop/campaigns.json",
-          "allow": [
-            "campaigns"
-          ]
+          "allow": [ "campaigns" ]
         },
         {
           "url_pattern": "/static/shop/products.json",
-          "allow": [
-            "products"
-          ],
+          "allow": [ "products" ],
           "extra_config": {
             "qos/ratelimit/proxy": {
               "max_rate": 1,
@@ -182,6 +192,11 @@
         "qos/ratelimit/router": {
           "max_rate": 2
         }
+      },
+      "custom_fields": {
+        "tag": "Feature",
+        "name": "Aggregation + backend rate limiting + endpoint rate limiting",
+        "slug": "aggregation-backend-rate-limiting-endpoint-rate-limiting"
       }
     },
     {
@@ -190,9 +205,7 @@
       "endpoint": "/market/cached",
       "backend": [
         {
-          "host": [
-            "https://api.coingecko.com"
-          ],
+          "host": ["https://api.coingecko.com"],
           "url_pattern": "/api/v3/coins/markets?vs_currency=eur&ids=bitcoin%2Cethereum&order=market_cap_desc&per_page=100&page=1&sparkline=false",
           "encoding": "safejson",
           "mapping": {
@@ -204,17 +217,20 @@
             }
           }
         }
-      ]
+      ],
+      "custom_fields": {
+        "tag": "Feature",
+        "name": "Backend cache",
+        "slug": "backend-cache"
+      }
     },
     {
       "@comment": "Feature: GraphQL to REST",
-      "title": "Feature: GraphQL to REST",
+      "title":"Feature: GraphQL to REST",
       "endpoint": "/starwars_films/{movie_id}",
       "backend": [
         {
-          "host": [
-            "https://swapi-graphql.netlify.app/"
-          ],
+          "host": ["https://swapi-graphql.netlify.app/"],
           "url_pattern": "/.netlify/functions/index",
           "target": "data.film",
           "extra_config": {
@@ -227,17 +243,20 @@
             }
           }
         }
-      ]
+      ],
+      "custom_fields": {
+        "tag": "Feature",
+        "name": "GraphQL to REST",
+        "slug": "graphql-to-rest"
+      }
     },
     {
       "@comment": "Feature: Concurrent calls - Not enabled",
-      "title": "Feature: Concurrent calls - Not enabled",
+      "title":"Feature: Concurrent calls - Not enabled",
       "endpoint": "/market/simple",
       "backend": [
         {
-          "host": [
-            "https://api.coingecko.com"
-          ],
+          "host": ["https://api.coingecko.com"],
           "url_pattern": "/api/v3/coins/markets?vs_currency=eur&ids=bitcoin%2Cethereum&order=market_cap_desc&per_page=100&page=1&sparkline=false",
           "encoding": "safejson",
           "mapping": {
@@ -253,18 +272,21 @@
             "Concurrent calls"
           ]
         }
+      },
+      "custom_fields": {
+        "tag": "Feature",
+        "name": "Concurrent calls - Not enabled",
+        "slug": "concurrent-calls-not-enabled"
       }
     },
     {
       "@comment": "Feature: Concurrent calls - Enabled",
-      "title": "Feature: Concurrent calls - Enabled",
+      "title":"Feature: Concurrent calls - Enabled",
       "endpoint": "/market/concurrent",
       "concurrent_calls": 3,
       "backend": [
         {
-          "host": [
-            "https://api.coingecko.com"
-          ],
+          "host": ["https://api.coingecko.com"],
           "url_pattern": "/api/v3/coins/markets?vs_currency=eur&ids=bitcoin%2Cethereum&order=market_cap_desc&per_page=100&page=1&sparkline=false",
           "encoding": "safejson",
           "mapping": {
@@ -280,18 +302,21 @@
             "Concurrent calls"
           ]
         }
+      },
+      "custom_fields": {
+        "tag": "Feature",
+        "name": "Concurrent calls - Not enabled",
+        "slug": "concurrent-calls-not-enabled"
       }
     },
     {
       "@comment": "Feature: Sequential calls, using values from 1st call response into 2nd call request",
-      "title": "Feature: Sequential calls, using values from 1st call response into 2nd call request",
+      "title":"Feature: Sequential calls, using values from 1st call response into 2nd call request",
       "endpoint": "/sequential",
       "backend": [
         {
           "url_pattern": "/static/hotels/1.json",
-          "allow": [
-            "destination_id"
-          ]
+          "allow": [ "destination_id" ]
         },
         {
           "url_pattern": "/static/destinations/{resp0_destination_id}.json"
@@ -301,6 +326,11 @@
         "proxy": {
           "sequential": true
         }
+      },
+      "custom_fields": {
+        "tag": "Feature",
+        "name": "Sequential calls, using values from 1st call response into 2nd call request",
+        "slug": "sequential-calls-using-values-from-1st-call-response-into-2nd-call-request"
       }
     },
     {
@@ -313,13 +343,16 @@
           "group": "user"
         },
         {
-          "host": [
-            "http://fake_url_that_should_not_resolve.tld"
-          ],
+          "host": [ "http://fake_url_that_should_not_resolve.tld" ],
           "url_pattern": "/",
           "group": "none"
         }
-      ]
+      ],
+      "custom_fields": {
+        "tag": "Feature",
+        "name": "A failing request from a non-existent backend",
+        "slug": "a-failing-request-from-a-non-existent-backend"
+      }
     },
     {
       "@comment": "Feature: Expose a GET REST endpoint from POST to SOAP service",
@@ -327,9 +360,7 @@
       "endpoint": "/capital-of/{country}",
       "backend": [
         {
-          "host": [
-            "http://webservices.oorsprong.org"
-          ],
+          "host": ["http://webservices.oorsprong.org"],
           "url_pattern": "/websamples.countryinfo/CountryInfoService.wso",
           "encoding": "xml",
           "method": "POST",
@@ -337,18 +368,20 @@
           "mapping": {
             "CapitalCityResult": "capital"
           },
-          "deny": [
-            "-m"
-          ],
+          "deny": ["-m"],
           "extra_config": {
             "backend/soap": {
               "@comment": "The XML template with variables is in the following path:",
-              "title": "The XML template with variables is in the following path:",
               "path": "./extended/templates/soap_request_capital_city.tmpl.xml"
             }
           }
         }
-      ]
+      ],
+      "custom_fields": {
+        "tag": "Feature",
+        "name": "Expose a GET REST endpoint from POST to SOAP service",
+        "slug": "expose-a-get-rest-endpoint-from-post-to-soap-service"
+      }
     },
     {
       "@comment": "EE only feature: Wildcard to our fake API, open",
@@ -367,11 +400,16 @@
             "Wildcard"
           ]
         }
+      },
+      "custom_fields": {
+        "tag": "EE only feature",
+        "name": "Wildcard to our fake API, open",
+        "slug": "wildcard-to-our-fake-api-open"
       }
     },
     {
       "@comment": "EE only feature: Wildcard to our fake API, protected with Basic Auth",
-      "title": "EE only feature: Wildcard to our fake API, protected with Basic Auth",
+      "title": "EE only feature: Wildcard to our fake API, protected with Basic Auth", 
       "endpoint": "/fake-api-auth/*",
       "@test_with": "curl -iG 'http://admin:admin@localhost:8080/fake-api-auth/articles.json'",
       "output_encoding": "no-op",
@@ -382,7 +420,6 @@
       ],
       "extra_config": {
         "@comment": "The simple inclusion of the Auth Basic component enables it for this endpoint",
-        "title": "The simple inclusion of the Auth Basic component enables it for this endpoint",
         "auth/basic": {},
         "documentation/openapi": {
           "summary": "Calls to internal service with wildcard, adding auth",
@@ -391,6 +428,11 @@
             "Wildcard"
           ]
         }
+      },
+      "custom_fields": {
+        "tag": "EE only feature",
+        "name": "Wildcard to our fake API, protected with Basic Auth",
+        "slug": "widlcard-to-our-fake-api-protected-with-basic-auth"
       }
     },
     {
@@ -418,20 +460,29 @@
             "Wildcard"
           ]
         }
+      },
+      "custom_fields": {
+        "tag": "EE only feature",
+        "name": "Wildcard with geofencing - Allow visits only from Spain",
+        "slug": "wildcard-with-geofencing-allow-visits-only-from-spain"
       }
     },
     {
       "@comment": "EE only feature: Dynamic routing based on headers (token claim and cookie also available)",
-      "title": "EE only feature: Dynamic routing based on headers (token claim and cookie also available)",
+      "title":  "EE only feature: Dynamic routing based on headers (token claim and cookie also available)",
       "endpoint": "/dynamic/header",
       "backend": [
         {
           "@comment": "We will route to the backend using the content of the 'X-Route' header",
-          "title": "We will route to the backend using the content of the 'X-Route' header",
           "@test_with": "curl -iG -H 'X-Route: hello' 'http://localhost:8080/dynamic/header'",
           "url_pattern": "/__debug/{input_headers.x-route}"
         }
-      ]
+      ],
+      "custom_fields": {
+        "tag": "EE only feature",
+        "name": "Dynamic routing based on headers (token claim and cookie also available)",
+        "slug": "dynamic-routing-based-on-headers-token-clain-and-cookie-also-available"
+      }
     },
     {
       "@comment": "EE only feature: Dynamic routing based on query strings",
@@ -440,11 +491,15 @@
       "backend": [
         {
           "@comment": "We will route to the backend using the content of the 'X-Route' header",
-          "title": "We will route to the backend using the content of the 'X-Route' header",
           "@test_with": "curl -iG 'http://localhost:8080/dynamic/qs?route=hello'",
           "url_pattern": "/__debug/{input_query_strings.route}"
         }
-      ]
+      ],
+      "custom_fields": {
+        "tag": "EE only feature",
+        "name": "Dynamic routing based on query strings",
+        "slug": "dynamic-routing-based-on-query-strings"
+      }
     },
     {
       "@comment": "Feature: A public endpoint that requires no authentication",
@@ -454,7 +509,12 @@
         {
           "url_pattern": "/static/hotels/1.json"
         }
-      ]
+      ],
+      "custom_fields": {
+        "tag": "Feature",
+        "name": "A public endpoint that requires no authentication",
+        "slug": "a-public-endpoint-that-requires-no-authentication"
+      }
     },
     {
       "@comment": "Feature: Authorization based on JWT (using Auth0)",
@@ -468,14 +528,9 @@
       "extra_config": {
         "auth/validator": {
           "alg": "RS256",
-          "audience": [
-            "http://api.example.com"
-          ],
+          "audience": ["http://api.example.com"],
           "roles_key": "http://api.example.com/custom/roles",
-          "roles": [
-            "user",
-            "admin"
-          ],
+          "roles": ["user", "admin"],
           "jwk_url": "https://albert-test.auth0.com/.well-known/jwks.json"
         },
         "documentation/openapi": {
@@ -485,6 +540,11 @@
             "Authentication"
           ]
         }
+      },
+      "custom_fields": {
+        "tag": "Feature",
+        "name": "Authorization based on JWT (using Auth0)",
+        "slug": "authorization-based-on-jwt-using-auth0"
       }
     },
     {
@@ -499,18 +559,18 @@
       "extra_config": {
         "auth/validator": {
           "alg": "HS256",
-          "audience": [
-            "http://api.example.com"
-          ],
+          "audience": ["http://api.example.com"],
           "roles_key": "roles",
           "issuer": "https://krakend.io",
-          "roles": [
-            "role_a",
-            "role_c"
-          ],
+          "roles": ["role_a", "role_c"],
           "jwk_url": "http://localhost:8080/static/jwk/symmetric.json",
           "disable_jwk_security": true
         }
+      },
+      "custom_fields": {
+        "tag": "Feature",
+        "name": "Authorization based on JWT (using KrakenD JOSE signer)",
+        "slug": "authorization-based-on-jwt-using-krakedn-jose-signer"
       }
     },
     {
@@ -526,13 +586,15 @@
         "auth/signer": {
           "alg": "HS256",
           "kid": "sim2",
-          "keys_to_sign": [
-            "access_token",
-            "refresh_token"
-          ],
+          "keys_to_sign": ["access_token", "refresh_token"],
           "jwk_url": "http://localhost:8080/static/jwk/symmetric.json",
           "disable_jwk_security": true
         }
+      },
+      "custom_fields": {
+        "tag": "Feature",
+        "name": "JWT signing, as described at https://www.krakend.io/docs/authorization/jwt-signing/",
+        "slug": "jwt-signing-as-described-at-https-www-krakend-io-docs-authorization-jwt-signing"
       }
     },
     {
@@ -549,9 +611,7 @@
       ],
       "extra_config": {
         "auth/api-keys": {
-          "roles": [
-            "admin"
-          ]
+          "roles": ["admin"]
         },
         "documentation/openapi": {
           "summary": "Some information behind API-Keys authentication protection",
@@ -560,6 +620,11 @@
             "Authentication"
           ]
         }
+      },
+      "custom_fields": {
+        "tag": "EE only feature",
+        "name": "Authorization based on API Keys",
+        "slug": "authorization-based-on-api-keys"
       }
     },
     {
@@ -571,22 +636,20 @@
         {
           "url_pattern": "/__debug/post"
         }
-      ]
+      ],
+      "custom_fields": {
+        "tag": "Feature",
+        "name": "Only POST method allowed",
+        "slug": "only-post-method-allowed"
+      }
     },
     {
       "@comment": "Feature: Mocked response",
-      "title": "Feature: Mocked response",
+      "title":  "Feature: Mocked response",
       "endpoint": "/mocked-response",
       "method": "GET",
       "output_encoding": "json",
-      "backend": [
-        {
-          "host": [
-            "http://unexistent_backend"
-          ],
-          "url_pattern": "/"
-        }
-      ],
+      "backend": [{"host": ["http://unexistent_backend"], "url_pattern": "/"}],
       "extra_config": {
         "proxy": {
           "static": {
@@ -603,51 +666,49 @@
             "strategy": "always"
           }
         }
+      },
+      "custom_fields": {
+        "tag": "Feature",
+        "name": "Mocked response",
+        "slug": "mocked-response"
       }
     },
     {
       "@comment": "EE only feature: GRPC",
       "title": "EE only feature: GRPC",
       "endpoint": "/travel",
-      "input_query_strings": [
-        "lat",
-        "lon"
-      ],
+      "input_query_strings": ["lat", "lon"],
       "backend": [
         {
-          "host": [
-            "grpc_flights:4242"
-          ],
+          "host": ["grpc_flights:4242"],
           "group": "flights",
           "url_pattern": "/flight_finder.Flights/FindFlight",
           "extra_config": {
             "backend/grpc": {
-              "input_mapping": {
-                "lat": "where.latitude",
-                "lon": "where.longitude"
-              }
+                "input_mapping" : {
+                    "lat": "where.latitude",
+                    "lon": "where.longitude"
+                }
             }
           }
         },
         {
-          "host": [
-            "grpc_trains:4243"
-          ],
+          "host": ["grpc_trains:4243"],
           "group": "trains",
           "url_pattern": "/train_finder.Trains/FindTrains",
           "extra_config": {
             "backend/grpc": {
-              "input_mapping": {
-                "lat": "origin.position.latitude",
-                "lon": "origin.position.longitude"
-              },
-              "response_naming_convention": "camelCase",
-              "output_enum_as_string": true,
-              "output_timestamp_as_string": true,
-              "output_duration_as_string": true,
-              "client_tls": {
-                "allow_insecure_connections": true
-              }
+                "input_mapping" : {
+                    "lat": "origin.position.latitude",
+                    "lon": "origin.position.longitude"
+                },
+                "response_naming_convention": "camelCase",
+                "output_enum_as_string": true,
+                "output_timestamp_as_string": true,
+                "output_duration_as_string": true,
+                "client_tls": {
+                    "allow_insecure_connections": true
+                }
             }
           }
         },
@@ -656,22 +717,25 @@
           "url_pattern": "/hotels/1.json"
         },
         {
-          "host": [
-            "grpc_trains:4243"
-          ],
+          "host": ["grpc_trains:4243"],
           "group": "trains_classes",
           "url_pattern": "/train_finder.Trains/GetTrainClasses",
           "extra_config": {
             "backend/grpc": {
-              "response_naming_convention": "camelCase",
-              "output_remove_unset_values": true,
-              "client_tls": {
-                "allow_insecure_connections": true
-              }
+                "response_naming_convention": "camelCase",
+                "output_remove_unset_values": true,
+                "client_tls": {
+                    "allow_insecure_connections": true
+                }
             }
           }
         }
-      ]
+      ],
+      "custom_fields": {
+        "tag": "EE only feature",
+        "name": "GRPC",
+        "slug": "grpc"
+      }
     },
     {
       "@comment": "EE only feature: GRPC Payload in Body",
@@ -680,98 +744,103 @@
       "method": "POST",
       "backend": [
         {
-          "host": [
-            "grpc_flights:4242"
-          ],
+          "host": ["grpc_flights:4242"],
           "group": "flights",
           "url_pattern": "/flight_finder.Flights/BookFlight",
           "extra_config": {
             "backend/grpc": {
-              "input_mapping": {
-                "Id_flight": "flight_id",
-                "Main_passenger": "main_passenger.full_name"
-              },
-              "use_request_body": true
+                "input_mapping": {
+                    "Id_flight": "flight_id",
+                    "Main_passenger": "main_passenger.full_name"
+                },
+                "use_request_body": true
             }
           }
         }
-      ]
-    },
-    {
-      "@comment": "EE only feature: WebSockets (chat example)",
-      "title": "EE only feature: WebSockets (chat example)",
-      "endpoint": "/chat/ws/{room}",
-      "input_query_strings": [
-        "*"
       ],
-      "input_headers": [
-        "*"
-      ],
-      "backend": [
-        {
-          "url_pattern": "/ws/{room}",
-          "disable_host_sanitize": true,
-          "host": [
-            "ws://chat:8888"
-          ]
-        }
-      ],
-      "extra_config": {
-        "websocket": {
-          "input_headers": [
-            "Cookie",
-            "Authorization"
-          ],
-          "connect_event": true,
-          "disconnect_event": true,
-          "read_buffer_size": 4096,
-          "write_buffer_size": 4096,
-          "message_buffer_size": 4096,
-          "max_message_size": 3200000,
-          "write_wait": "10s",
-          "pong_wait": "60s",
-          "ping_period": "54s",
-          "max_retries": 0,
-          "backoff_strategy": "exponential"
-        }
+      "custom_fields": {
+        "tag": "EE only feature",
+        "name": "GRPC Payload in Body",
+        "slug": "grpc-payload-in-body"
       }
     },
     {
-      "@comment": "EE only feature: WebSockets (chat example web interface)",
-      "title": "EE only feature: WebSockets (chat example web interface)",
-      "endpoint": "/chat",
-      "output_encoding": "no-op",
-      "backend": [
-        {
-          "url_pattern": "/",
-          "host": [
-            "http://chat:8888"
-          ],
-          "encoding": "no-op"
-        }
-      ]
+        "@comment": "EE only feature: WebSockets (chat example)",
+        "title":  "EE only feature: WebSockets (chat example)",
+        "endpoint": "/chat/ws/{room}",
+        "input_query_strings":[ "*" ],
+        "input_headers":[ "*" ],
+        "backend": [
+            {
+                "url_pattern": "/ws/{room}",
+                "disable_host_sanitize": true,
+                "host": [ "ws://chat:8888" ]
+            }
+        ],
+        "extra_config":{
+            "websocket": {
+                "input_headers":["Cookie", "Authorization"],
+                "connect_event": true,
+                "disconnect_event": true,
+                "read_buffer_size": 4096,
+                "write_buffer_size": 4096,
+                "message_buffer_size": 4096,
+                "max_message_size": 3200000,
+                "write_wait": "10s",
+                "pong_wait": "60s",
+                "ping_period": "54s",
+                "max_retries": 0,
+                "backoff_strategy": "exponential"
+            }
+        },
+        "custom_fields": {
+        "tag": "EE only feature",
+        "name": "WebSockets (chat example)",
+        "slug": "websockets-chat-example"
+      }
+    },
+    {
+        "@comment": "EE only feature: WebSockets (chat example web interface)",
+        "title": "EE only feature: WebSockets (chat example web interface)",
+        "endpoint": "/chat",
+        "output_encoding": "no-op",
+        "backend":[
+            {
+                "url_pattern":"/",
+                "host": [ "http://chat:8888" ],
+                "encoding":"no-op"
+            }
+        ],
+        "custom_fields": {
+        "tag": "EE only feature",
+        "name": "WebSockets (chat example web interface)",
+        "slug": "websockets-chat-example-web-interface"
+      }
     },
     {
       "@comment": "EE only feature: Web Server - Static content",
       "title": "EE only feature: Web Server - Static content",
       "endpoint": "/demo/*",
       "output_encoding": "no-op",
-      "backend": [
-        {
-          "url_pattern": "/",
-          "extra_config": {
-            "backend/static-filesystem": {
-              "directory_listing": false,
-              "path": "./demo/"
-            }
-          },
-          "host": [
-            "http://localhost:8080"
-          ],
-          "encoding": "no-op"
-        }
-      ]
-    }
+      "backend":[
+          {
+              "url_pattern":"/",
+              "extra_config": {
+                "backend/static-filesystem": {
+                  "directory_listing": false,
+                  "path": "./demo/"
+                }
+              },
+              "host": [ "http://localhost:8080" ],
+              "encoding":"no-op"
+          }
+      ],
+      "custom_fields": {
+        "tag": "EE only feature",
+        "name": "Web Server - Static content",
+        "slug": "web-server-static-content"
+      }
+  }
   ],
   "sequential_start": true,
   "async_agent": [
