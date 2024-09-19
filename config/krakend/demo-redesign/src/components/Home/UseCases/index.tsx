@@ -55,7 +55,7 @@ const UseCases = () => {
                     console.log(useCase);
                     return (
                       <Link
-                        href={`/usecase/${useCase.custom_fields.slug}`}
+                        href={`/${useCase.custom_fields.slug}`}
                         className="text-white p-3 rounded-md"
                         key={index}
                         style={{ background: "#272B3A" }}
@@ -76,7 +76,7 @@ const UseCases = () => {
           console.log(useCase);
           return (
             <Link
-              href={`/usecase/${useCase.custom_fields.slug}`}
+              href={`/${useCase.custom_fields.slug}`}
               key={index}
               className="text-white p-3 rounded-md inline-block overflow-auto"
               style={{ background: "#272B3A" }}

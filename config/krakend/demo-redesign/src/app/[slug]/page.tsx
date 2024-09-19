@@ -5,9 +5,11 @@ import { Layout } from '@/components/common';
 import userCases from "@/data/krakend.json";
 import LeftArrow from "@/image/icons/arrow-left.svg";
 import CopyIcon from "@/image/icons/copy.svg";
-import 'prismjs';
-import 'prismjs/components/prism-json';
-import 'prismjs/themes/prism-custom.css';
+import Prism from 'prismjs'
+
+require('prismjs/components/prism-json')
+// import 'prismjs/components/prism-json';
+// import 'prismjs/themes/prism-custom.css';
 
 const DemoPage = () => {
     const { slug } = useParams();
@@ -50,8 +52,8 @@ const DemoPage = () => {
                     </button>
 
                     <div className="mt-10">
-                        <p className='text-white text-[18px] mb-4 uppercase'>{useCase.custom_fields.tag}</p>
-                        <h1 className=" text-3xl sm:text-[48px] sm:leading-snug font-bold mb-4 text-white">{useCase.custom_fields.name}</h1>
+                        <p className='text-white uppercase text-md tracking-wider'>{useCase.custom_fields.tag}</p>
+                        <h1 className="text-3xl sm:text-[48px] sm:leading-snug font-bold mb-4 text-white">{useCase.custom_fields.name}</h1>
                         <p className="text-[#A2A9BE] font-[16px] mb-8">endpoint: {useCase.endpoint}</p>
 
                         <div className="flex gap-8">
