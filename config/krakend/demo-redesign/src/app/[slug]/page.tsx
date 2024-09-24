@@ -6,11 +6,9 @@ import userCases from "@/data/krakend.json";
 import LeftArrow from "@/image/icons/arrow-left.svg";
 import CopyIcon from "@/image/icons/copy.svg";
 import Prism from "prismjs";
-import GitUser from "@/components/DemoDetail/GitUser"
+import GitUser from "@/components/Demos/GitUser";
 
 require("prismjs/components/prism-json");
-// import 'prismjs/components/prism-json';
-// import 'prismjs/themes/prism-custom.css';
 
 const componentMapping = {GitUser,};
 
@@ -30,7 +28,7 @@ const DemoPage = () => {
 
   // Created a new object excluding the custom_fields property
   const { custom_fields, ...useCaseWithoutCustomFields } = useCase;
-  // Initialize Prism.js syntax highlighting
+
   useEffect(() => {
     Prism.highlightAll();
   }, []);
@@ -45,7 +43,8 @@ const DemoPage = () => {
       .catch((err) => console.error("Failed to copy!", err));
   };
 
-  const ComponentToRender = componentMapping[custom_fields.component];
+  const ExampleUrlComponent =
+    componentMapping[custom_fields.component];
 
   return (
     <Layout>
@@ -64,6 +63,7 @@ const DemoPage = () => {
             <h1 className="heading--h2 mb-10">{useCase.custom_fields.name}</h1>
 
             <div className="flex flex-col lg:flex-row gap-12">
+              {/* Left section */}
               <div className="lg:w-1/2 overflow-auto">
                 <p className="font-semibold mb-2">KrakenD Config</p>
                 <pre className="text-sm relative">
@@ -80,10 +80,10 @@ const DemoPage = () => {
                   </code>
                 </pre>
               </div>
+              {/* Right section */}
               <div className="lg:w-1/2">
                 <p className="font-semibold mb-2">Endpoint</p>
                 <p>{useCase.endpoint}</p>
-
                 <div className="my-10">
                   <p className="font-semibold mb-2">About this demo</p>
                   <div
@@ -94,8 +94,14 @@ const DemoPage = () => {
                     }}
                   />
                 </div>
-
-                <div>{ComponentToRender && <ComponentToRender />}</div>
+                <div>
+                  {ExampleUrlComponent && (
+                    <ExampleUrlComponent
+                      exampleUrl={useCase.custom_fields.exampleUrl}
+                      placeholderValue={useCase.custom_fields.placeholderValue}
+                    />
+                  )}
+                </div>
               </div>
             </div>
           </div>
