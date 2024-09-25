@@ -266,7 +266,12 @@
       "custom_fields": {
         "tag": "Feature",
         "name": "GraphQL to REST",
-        "slug": "graphql-to-rest"
+        "slug": "graphql-to-rest",
+        "instructions": "<li>This configuration file demonstrates an API gateway setup that allows users to submit a movie ID and retrieve details about Star Wars films. The API gateway converts a GraphQL query into a REST API that can be accessed via a simple endpoint.</li><li>To fetch movie details, users can submit the movie ID (e.g., 1) into a form that sends the request to the REST endpoint.</li><li>The REST endpoint is structured as: /starwars_films/{movie_id}</li><li>Replace {movie_id} with the actual movie ID (e.g., 1 for Episode IV: A New Hope).</li>",
+        "exampleUrl": "http://localhost:8080/starwars_films/",
+        "placeholderValue": "Enter movie ID",
+        "component": "StarwarsFilms",
+        "helpText": "Please enter the movie ID between 1-6 (e.g., 1 for Episode IV: A New Hope)."
       }
     },
     {
