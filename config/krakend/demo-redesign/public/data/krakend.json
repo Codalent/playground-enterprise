@@ -65,7 +65,10 @@
         "tag": "Feature",
         "name": "Aggregation + Basic transformation (filtering & mapping) + grouping",
         "slug": "aggregation-basic-transformation-filtering-and-mapping-grouping",
-        "instructions": "<ul><li>GET /git/{user} to get the user information and the list of repositories</li></ul>"
+        "instructions": "<li>point number 1</li><li>point number 2</li><li>point number 3</li><li>point number 4</li>",
+        "exampleUrl":"http://localhost:8080/git/",
+        "placeholderValue": "Enter your Github username",
+        "component":"GitUser"
       }
     },
     {

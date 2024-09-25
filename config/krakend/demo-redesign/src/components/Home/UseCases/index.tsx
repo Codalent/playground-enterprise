@@ -52,7 +52,6 @@ const UseCases = () => {
                 </p>
                 <div className="flex flex-col gap-4">
                   {useCaseData[1].map((useCase: any, index: number) => {
-                    console.log(useCase);
                     return (
                       <Link
                         href={`/${useCase.custom_fields.slug}`}
@@ -73,7 +72,6 @@ const UseCases = () => {
 
       <div className="flex flex-col gap-4">
         {useCases["others"].map((useCase: any, index: number) => {
-          console.log(useCase);
           return (
             <Link
               href={`/${useCase.custom_fields.slug}`}
