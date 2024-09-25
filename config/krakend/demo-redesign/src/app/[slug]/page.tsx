@@ -8,11 +8,12 @@ import CopyIcon from "@/image/icons/copy.svg";
 import Prism from "prismjs";
 import GitUser from "@/components/Demos/GitUser";
 import CryptoCurrency from "@/components/Demos/CryptoCurrency";
-import StarwarsFilms from "@/components/Demos/StarwarsFilms"
+import StarwarsFilms from "@/components/Demos/StarwarsFilms";
+import CreditCard from "@/components/Demos/CreditCard"
 
 require("prismjs/components/prism-json");
 
-const componentMapping = { GitUser, CryptoCurrency, StarwarsFilms };
+const componentMapping = { GitUser, CryptoCurrency, StarwarsFilms, CreditCard };
 
 const DemoPage = () => {
   const { slug } = useParams();

@@ -141,7 +141,10 @@
       "custom_fields": {
         "tag": "Feature",
         "name": "Regular expression manipulation",
-        "slug": "regular-expression-manipulation"
+        "slug": "regular-expression-manipulation",
+        "instructions":"No instructions available",
+        "exampleUrl":"http://localhost:8080/user/creditcard",
+        "component":"CreditCard"
       }
     },
     {
