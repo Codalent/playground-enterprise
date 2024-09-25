@@ -10,10 +10,11 @@ import GitUser from "@/components/Demos/GitUser";
 import CryptoCurrency from "@/components/Demos/CryptoCurrency";
 import StarwarsFilms from "@/components/Demos/StarwarsFilms";
 import CreditCard from "@/components/Demos/CreditCard"
+import Fail from "@/components/Demos/Fail"
 
 require("prismjs/components/prism-json");
 
-const componentMapping = { GitUser, CryptoCurrency, StarwarsFilms, CreditCard };
+const componentMapping = { GitUser, CryptoCurrency, StarwarsFilms, CreditCard, Fail };
 
 const DemoPage = () => {
   const { slug } = useParams();

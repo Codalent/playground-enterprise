@@ -386,7 +386,10 @@
       "custom_fields": {
         "tag": "Feature",
         "name": "A failing request from a non-existent backend",
-        "slug": "a-failing-request-from-a-non-existent-backend"
+        "slug": "a-failing-request-from-a-non-existent-backend",
+        "instructions":"No instructions available",
+        "exampleUrl":"http://localhost:8080/fail",
+        "component":"Fail"
       }
     },
     {
