@@ -102,7 +102,12 @@
       "custom_fields": {
         "tag": "Feature",
         "name": "One-liner advanced data manipulation (filter, sorting & remapping) with JMESPath Query Language",
-        "slug": "one-liner-advanced-data-manipulation-filter-sorting-remapping-with-JMESPath-query-language"
+        "slug": "one-liner-advanced-data-manipulation-filter-sorting-remapping-with-JMESPath-query-language",
+        "instructions":"No instructions available",
+        "exampleUrl":"http://localhost:8080/cryptos/",
+        "placeholderValue":"Enter currency symbol",
+        "component":"CryptoCurrency",
+        "helpText":"Please enter the cryptocurrency symbol (e.g., BTC for Bitcoin, ETH for Ethereum)."
       }
     },
     {

@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, use } from "react";
 import { useParams, useRouter } from "next/navigation";
 import { Layout } from "@/components/common";
 import userCases from "@/data/krakend.json";
@@ -7,10 +7,11 @@ import LeftArrow from "@/image/icons/arrow-left.svg";
 import CopyIcon from "@/image/icons/copy.svg";
 import Prism from "prismjs";
 import GitUser from "@/components/Demos/GitUser";
+import CryptoCurrency from "@/components/Demos/CryptoCurrency";
 
 require("prismjs/components/prism-json");
 
-const componentMapping = {GitUser,};
+const componentMapping = { GitUser, CryptoCurrency };
 
 const DemoPage = () => {
   const { slug } = useParams();
@@ -43,8 +44,7 @@ const DemoPage = () => {
       .catch((err) => console.error("Failed to copy!", err));
   };
 
-  const ExampleUrlComponent =
-    componentMapping[custom_fields.component];
+  const ExampleUrlComponent = componentMapping[custom_fields.component];
 
   return (
     <Layout>
@@ -99,6 +99,7 @@ const DemoPage = () => {
                     <ExampleUrlComponent
                       exampleUrl={useCase.custom_fields.exampleUrl}
                       placeholderValue={useCase.custom_fields.placeholderValue}
+                      helpText={useCase.custom_fields.helpText}
                     />
                   )}
                 </div>
