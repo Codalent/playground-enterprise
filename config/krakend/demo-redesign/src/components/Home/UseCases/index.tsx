@@ -42,40 +42,38 @@ const UseCases = () => {
       {Object.entries(useCases).map((useCaseData: any) => {
         return (
           useCaseData[0] !== "others" && (
-            <>
-              <div
-                className="p-3.5 rounded-md mb-4"
-                style={{ background: "#1D202A" }}
-              >
-                <p className="text-brand-neutral-300 mb-4">
-                   Request and Response Manipulation
-                </p>
-                <div className="flex flex-col gap-4">
-                  {useCaseData[1].map((useCase: any, index: number) => {
-                    return (
-                      <Link
-                        href={`/${useCase.custom_fields.slug}`}
-                        className="text-white p-3 rounded-md"
-                        key={index}
-                        style={{ background: "#272B3A" }}
-                      >
-                        {useCase.title}
-                      </Link>
-                    );
-                  })}
-                </div>
+            <div
+              className="p-3.5 rounded-md mb-4"
+              style={{ background: "#1D202A" }}
+              key={useCaseData[0]}
+            >
+              <p className="text-brand-neutral-300 mb-4">{useCaseData[0]}</p>
+              <div className="flex flex-col gap-4">
+                {useCaseData[1].map((useCase: any, index: number) => {
+                  return (
+                    <Link
+                      href={`/${useCase.custom_fields.slug}`}
+                      className="text-white p-3 rounded-md"
+                      key={`${useCase.custom_fields.slug}-${index}`}
+                      style={{ background: "#272B3A" }}
+                    >
+                      {useCase.title}
+                    </Link>
+                  );
+                })}
               </div>
-            </>
+            </div>
           )
         );
       })}
 
       <div className="flex flex-col gap-4">
+        <p className="text-brand-neutral-300">Others</p>
         {useCases["others"].map((useCase: any, index: number) => {
           return (
             <Link
               href={`/${useCase.custom_fields.slug}`}
-              key={index}
+              key={`others-${useCase.custom_fields.slug}-${index}`}
               className="text-white p-3 rounded-md inline-block overflow-auto"
               style={{ background: "#272B3A" }}
             >
