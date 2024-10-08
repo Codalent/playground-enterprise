@@ -83,7 +83,7 @@ const Page: FC<any> = () => {
 
             {/* Diagram */}
             <div className="flex-1 flex items-start">
-              <div className="sticky top-8 w-full">
+              <div className="sticky top-4 w-full max-h-full h-[95vh] flex items-center justify-center">
                 <ArchitectureSvg />
               </div>
             </div>

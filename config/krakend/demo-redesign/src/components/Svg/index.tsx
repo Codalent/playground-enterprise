@@ -1,5 +1,5 @@
 export const ArchitectureSvg = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 715 910" fill="none">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 715 910" fill="none" className="h-full">
     <rect
       width={229}
       height={126}

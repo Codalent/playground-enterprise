@@ -35,25 +35,24 @@ const UseCases = () => {
 
   return Object.keys(useCases).length > 0 ? (
     <div className="py-5 px-6 rounded-xl" style={{ background: "#171921" }}>
-      <p className="text-brand-neutral-300 mb-6">
-        Explore the demos for the following use cases:
+      <p className="text-white mb-4 font-medium">
+        Explore demos for these use cases:
       </p>
 
       {Object.entries(useCases).map((useCaseData: any) => {
         return (
           useCaseData[0] !== "others" && (
             <div
-              className="p-3.5 rounded-md mb-4"
-              style={{ background: "#1D202A" }}
+              className="p-4 rounded-md mb-6 border border-brand-neutral-600"
               key={useCaseData[0]}
             >
-              <p className="text-brand-neutral-300 mb-4">{useCaseData[0]}</p>
+              <p className="text-white font-medium mb-4">{useCaseData[0]}</p>
               <div className="flex flex-col gap-4">
                 {useCaseData[1].map((useCase: any, index: number) => {
                   return (
                     <Link
                       href={`/${useCase.custom_fields.slug}`}
-                      className="text-white p-3 rounded-md"
+                      className="text-white text-base p-3 rounded-md hover:outline hover:outline-brand-neutral-300 transition-colors shadow-md"
                       key={`${useCase.custom_fields.slug}-${index}`}
                       style={{ background: "#272B3A" }}
                     >
@@ -68,13 +67,13 @@ const UseCases = () => {
       })}
 
       <div className="flex flex-col gap-4">
-        <p className="text-brand-neutral-300">Others</p>
+        <p className="text-white font-medium">Others</p>
         {useCases["others"].map((useCase: any, index: number) => {
           return (
             <Link
               href={`/${useCase.custom_fields.slug}`}
               key={`others-${useCase.custom_fields.slug}-${index}`}
-              className="text-white p-3 rounded-md inline-block overflow-auto"
+              className="text-white text-base p-3 rounded-md hover:outline hover:outline-brand-neutral-300 transition-colors shadow-md"
               style={{ background: "#272B3A" }}
             >
               {useCase.title}
