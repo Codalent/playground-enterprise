@@ -1,17 +1,17 @@
 "use client";
 
-import { Layout } from "@/components/common";
 import { Integration, UseCases } from "@/components/Home";
-import { ArchitectureSvg } from "@/components/Svg";
+import Architecture from "@/components/Architecture";
 import BGPurplePattern from "@/image/background/bg-pattern-purple.webp";
 import Image from "next/image";
 import Link from "next/link";
 import { FC, useState } from "react";
+
 const Page: FC<any> = () => {
   const [currentTab, setCurrentTab] = useState("use-cases");
 
   return (
-    <Layout>
+    <>
       {/* Hero */}
       <section className="bg-brand-neutral-900 section--sm relative">
         <div className="container--boxed">
@@ -84,7 +84,7 @@ const Page: FC<any> = () => {
             {/* Diagram */}
             <div className="flex-1 flex items-start">
               <div className="sticky top-4 w-full max-h-full h-[95vh] flex items-center justify-center">
-                <ArchitectureSvg />
+                <Architecture />
               </div>
             </div>
           </div>
@@ -105,7 +105,7 @@ const Page: FC<any> = () => {
           </Link>
         </div>
       </section>
-    </Layout>
+    </>
   );
 };
 

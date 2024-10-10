@@ -27,3 +27,15 @@
     @apply text-sm font-normal;
   }
 }
+
+.prose--mdx {
+  @apply prose prose-invert;
+
+  h2 {
+    @apply text-base font-semibold first-of-type:mt-0;
+  }
+
+  .button--primary {
+    @apply text-brand-neutral-900 no-underline hover:scale-105;
+  }
+}

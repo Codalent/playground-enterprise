@@ -51,7 +51,7 @@ const UseCases = () => {
                 {useCaseData[1].map((useCase: any, index: number) => {
                   return (
                     <Link
-                      href={`/${useCase.custom_fields.slug}`}
+                      href={`/use-cases/${useCase.custom_fields.slug}`}
                       className="text-white text-base p-3 rounded-md hover:outline hover:outline-brand-neutral-300 transition-colors shadow-md"
                       key={`${useCase.custom_fields.slug}-${index}`}
                       style={{ background: "#272B3A" }}
@@ -71,7 +71,7 @@ const UseCases = () => {
         {useCases["others"].map((useCase: any, index: number) => {
           return (
             <Link
-              href={`/${useCase.custom_fields.slug}`}
+              href={`/use-cases/${useCase.custom_fields.slug}`}
               key={`others-${useCase.custom_fields.slug}-${index}`}
               className="text-white text-base p-3 rounded-md hover:outline hover:outline-brand-neutral-300 transition-colors shadow-md"
               style={{ background: "#272B3A" }}

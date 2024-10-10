@@ -66,9 +66,9 @@
         "name": "Aggregation + Basic transformation (filtering & mapping) + grouping",
         "slug": "aggregation-basic-transformation-filtering-and-mapping-grouping",
         "instructions": "<li>point number 1</li><li>point number 2</li><li>point number 3</li><li>point number 4</li>",
-        "exampleUrl":"http://localhost:8080/git/",
+        "exampleUrl": "http://localhost:8080/git/",
         "placeholderValue": "Enter your Github username",
-        "component":"GitUser"
+        "component": "GitUser"
       }
     },
     {
@@ -103,11 +103,11 @@
         "tag": "Feature",
         "name": "One-liner advanced data manipulation (filter, sorting & remapping) with JMESPath Query Language",
         "slug": "one-liner-advanced-data-manipulation-filter-sorting-remapping-with-JMESPath-query-language",
-        "instructions":"No instructions available",
-        "exampleUrl":"http://localhost:8080/cryptos/",
-        "placeholderValue":"Enter currency symbol",
-        "component":"CryptoCurrency",
-        "helpText":"Please enter the cryptocurrency symbol (e.g., BTC for Bitcoin, ETH for Ethereum)."
+        "instructions": "No instructions available",
+        "exampleUrl": "http://localhost:8080/cryptos/",
+        "placeholderValue": "Enter currency symbol",
+        "component": "CryptoCurrency",
+        "helpText": "Please enter the cryptocurrency symbol (e.g., BTC for Bitcoin, ETH for Ethereum)."
       }
     },
     {
@@ -142,9 +142,9 @@
         "tag": "Feature",
         "name": "Regular expression manipulation",
         "slug": "regular-expression-manipulation",
-        "instructions":"No instructions available",
-        "exampleUrl":"http://localhost:8080/user/creditcard",
-        "component":"CreditCard"
+        "instructions": "No instructions available",
+        "exampleUrl": "http://localhost:8080/user/creditcard",
+        "component": "CreditCard"
       }
     },
     {
@@ -387,9 +387,9 @@
         "tag": "Feature",
         "name": "A failing request from a non-existent backend",
         "slug": "a-failing-request-from-a-non-existent-backend",
-        "instructions":"No instructions available",
-        "exampleUrl":"http://localhost:8080/fail",
-        "component":"Fail"
+        "instructions": "No instructions available",
+        "exampleUrl": "http://localhost:8080/fail",
+        "component": "Fail"
       }
     },
     {
@@ -474,7 +474,7 @@
       "custom_fields": {
         "tag": "EE only feature",
         "name": "Wildcard to our fake API, protected with Basic Auth",
-        "slug": "widlcard-to-our-fake-api-protected-with-basic-auth"
+        "slug": "wildcard-to-our-fake-api-protected-with-basic-auth"
       }
     },
     {
