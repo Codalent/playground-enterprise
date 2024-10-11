@@ -7,14 +7,16 @@
         "Jaeger collects traces and shows the complete funnel from user request to the impact in the backend"
       ],
       "url": "http://localhost:16686/search",
-      "iconUrl": "/images/icons/jaegertracingio.svg"
+      "iconUrl": "/images/icons/jaegertracingio.svg",
+      "slug":"tracing-dashboard"
     },
     {
       "name": "Kibana",
       "title": "Logging",
       "description": ["Kibana stores KrakenD logs and allows analysis"],
       "url": "http://localhost:5601/app/home#/",
-      "iconUrl": "/images/icons/kibana.svg"
+      "iconUrl": "/images/icons/kibana.svg",
+      "slug":"logging"
     },
     {
       "name": "Grafana",
@@ -24,7 +26,8 @@
         "Use <code>admin</code> as temporary user and password. And then go to <code>Dashboards</code> > <code>Manage</code> to see the KrakenD dashboard"
       ],
       "url": "http://localhost:4000",
-      "iconUrl": "/images/icons/grafana.svg"
+      "iconUrl": "/images/icons/grafana.svg",
+      "slug":"monitoring-and-metrics"
     },
     {
       "name": "OpenAPI",
@@ -34,7 +37,8 @@
       ],
       "url": "http://localhost:16686/search",
       "command": "docker-compose exec krakend_ee krakend openapi export -c /etc/krakend/krakend.json -o /etc/krakend/demo/swagger.json",
-      "iconUrl": "/images/icons/openapis.svg"
+      "iconUrl": "/images/icons/openapis.svg",
+      "slug":"documentation"
     },
     {
       "name": "Postman",
@@ -44,16 +48,18 @@
       ],
       "url": "http://localhost:16686/search",
       "command": "docker-compose exec krakend_ee krakend generate postman -c /etc/krakend/krakend.json -o /etc/krakend/demo/postman.json",
-      "iconUrl": "/images/icons/postman.svg"
+      "iconUrl": "/images/icons/postman.svg",
+      "slug":"postman"
     },
     {
       "name": "Key Clock",
       "title": "Identity Providers",
       "description": [
-        "Keycloak and many other identity providers can be integrated with KrakenD"
+        "Keycloak and many other identity providers can be integrated with KrakenD."
       ],
       "url": "",
-      "iconUrl": "/images/icons/keyclock.svg"
+      "iconUrl": "/images/icons/keyclock.svg",
+      "slug":"identity-providers"
     },
     {
       "name": "API-Key authentication",
@@ -63,7 +69,8 @@
       ],
       "url": "http://localhost:16686/search",
       "command": "curl -iG -H 'Authorization: Bearer 58427514-be32-0b52-b7c6-d01fada30497' http://localhost:8080/api-key",
-      "iconUrl": "/images/icons/apikey.png"
+      "iconUrl": "/images/icons/apikey.png",
+      "slug":"api-key-authentication"
     }
   ]
 }

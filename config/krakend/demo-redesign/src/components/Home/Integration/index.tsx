@@ -4,26 +4,29 @@ import Link from "next/link";
 
 const Integration = () => {
   return (
-    <div
-      className="py-5 px-6 rounded-xl flex flex-col gap-10"
-      style={{ background: "#171921" }}
-    >
+    <div className="py-5 px-6 flex flex-col rounded-xl" style={{ background: "#171921" }}>
+      <p className="text-white mb-4 font-medium">
+        Explore demos for these integrations:
+      </p>
       {integrationData.integrations.map((singleIntegrationData, index) => {
         return (
-          <div key={index}>
-            <Image
-              src={singleIntegrationData.iconUrl}
-              height={55}
-              width={51}
-              alt=""
-              className="mb-4"
-            />
-            <Link
-              href={singleIntegrationData.url}
-              className="font-medium mb-2 inline-block text-white"
-            >
-              {singleIntegrationData.title}
-            </Link>
+          <Link
+            key={index}
+            href={`/integration/${singleIntegrationData.slug}`}
+            className="flex flex-col gap-2 p-4 mb-4 rounded-md border border-brand-neutral-600 hover:outline hover:outline-brand-neutral-300 transition-colors shadow-md"
+          >
+            <div className="flex items-center gap-3 mb-4">
+              <Image
+                src={singleIntegrationData.iconUrl}
+                height={40}
+                width={40}
+                alt=""
+                className="object-contain"
+              />
+              <span className="font-medium text-white">
+                {singleIntegrationData.title}
+              </span>
+            </div>
             <div className="flex flex-col gap-4 mb-4 last:mb-0">
               {singleIntegrationData.description.map((description, index) => {
                 return (
@@ -38,13 +41,13 @@ const Integration = () => {
               })}
             </div>
             {singleIntegrationData?.command && (
-              <div className=" ">
+              <div>
                 <pre className="no-scrollbar overflow-auto p-4 text-brand-neutral-50 bg-brand-neutral-600 rounded-md">
                   {singleIntegrationData.command}
                 </pre>
               </div>
             )}
-          </div>
+          </Link>
         );
       })}
     </div>
