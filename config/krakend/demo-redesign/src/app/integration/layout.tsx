@@ -55,7 +55,7 @@ const Layout = ({ children }: IntegrationLayoutProps) => {
         </div>
 
         <div>
-          <div className="prose--mdx">{children}</div>
+          <div className="prose--mdx" style={{maxWidth: "none"}}>{children}</div>
         </div>
       </div>
     </div>

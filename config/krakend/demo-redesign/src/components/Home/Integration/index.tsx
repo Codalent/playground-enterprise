@@ -40,13 +40,6 @@ const Integration = () => {
                 );
               })}
             </div>
-            {singleIntegrationData?.command && (
-              <div>
-                <pre className="no-scrollbar overflow-auto p-4 text-brand-neutral-50 bg-brand-neutral-600 rounded-md">
-                  {singleIntegrationData.command}
-                </pre>
-              </div>
-            )}
           </Link>
         );
       })}
