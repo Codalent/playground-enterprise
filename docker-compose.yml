@@ -123,3 +123,12 @@ services:
       context: images/websocket/chat
     ports:
       - "4245:8888"
+  nextjs:
+    build:
+      dockerfile: Dockerfile.dev
+      context: ./config/krakend/demo-redesign
+    ports:
+      - "3050:3000"
+    volumes:
+      - /app/node_modules
+      - ./config/krakend/demo-redesign:/app
