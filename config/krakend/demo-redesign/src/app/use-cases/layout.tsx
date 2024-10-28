@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, ReactNode } from "react";
 import { useRouter, usePathname } from "next/navigation";
 
 import userCases from "@/data/krakend.json";
@@ -10,7 +10,11 @@ import { ArrowLeftIcon } from "@heroicons/react/20/solid";
 
 require("prismjs/components/prism-json");
 
-const Layout = ({ children }) => {
+interface UseCasesLayoutProps {
+  children: ReactNode;
+}
+
+const Layout = ({ children }: UseCasesLayoutProps) => {
   const pathname = usePathname();
   const router = useRouter();
   const slug = pathname.replace("/use-cases/", "");
