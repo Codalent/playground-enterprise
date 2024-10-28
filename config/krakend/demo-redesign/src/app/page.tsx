@@ -43,47 +43,50 @@ const Page: FC<any> = () => {
 
       <main className="section--xl bg-brand-neutral-900 relative">
         <div className="container--boxed">
-          <div className="flex flex-col md:flex-row items-stretch gap-8 justify-between">
-            <div className="md:w-1/3 ">
-              <div className="flex items-center gap-1.5 mb-2.5">
-                <button
-                  className={`px-4 py-2 font-medium rounded-md rounded-l-full ${
-                    currentTab === "use-cases"
-                      ? "bg-white text-brand-neutral-900"
-                      : "bg-brand-neutral-600 text-brand-neutral-300"
-                  }`}
-                  onClick={() => setCurrentTab("use-cases")}
-                >
-                  Use-cases
-                </button>
-                <button
-                  className={`px-4 py-2 font-medium rounded-r-full rounded-l-md ${
-                    currentTab === "integrations"
-                      ? "bg-white text-brand-neutral-900"
-                      : "bg-brand-neutral-600 text-brand-neutral-300"
-                  }`}
-                  onClick={() => setCurrentTab("integrations")}
-                >
-                  Integrations
-                </button>
+          <div className="grid grid-cols-12 w-full gap-8">
+            <div className="col-span-12 md:col-span-5 lg:col-span-4 flex">
+              <div className="max-w-full">
+                <div className="flex items-center gap-1.5 mb-2.5">
+                  <button
+                    className={`px-4 py-2 font-medium rounded-md rounded-l-full ${
+                      currentTab === "use-cases"
+                        ? "bg-white text-brand-neutral-900"
+                        : "bg-brand-neutral-600 text-brand-neutral-300"
+                    }`}
+                    onClick={() => setCurrentTab("use-cases")}
+                  >
+                    Use-cases
+                  </button>
+                  <button
+                    className={`px-4 py-2 font-medium rounded-r-full rounded-l-md ${
+                      currentTab === "integrations"
+                        ? "bg-white text-brand-neutral-900"
+                        : "bg-brand-neutral-600 text-brand-neutral-300"
+                    }`}
+                    onClick={() => setCurrentTab("integrations")}
+                  >
+                    Integrations
+                  </button>
+                </div>
+                {currentTab === "use-cases" && <UseCases />}
+                {currentTab === "integrations" && <Integration />}
               </div>
-              {currentTab === "use-cases" && <UseCases />}
-              {currentTab === "integrations" && <Integration />}
+
+              {/* Line */}
+              {/* <div
+                className="h-auto ml-8 shrink-0"
+                style={{
+                  width: "1px",
+                  minWidth: 1,
+                  backgroundImage:
+                    "linear-gradient(to bottom, #0b0c10 0%, #545d78 25%, #545d78 51%, #545d78 75%, #0b0c10 100%)",
+                }}
+              /> */}
             </div>
 
-            {/* Line */}
-            <div
-              className="h-auto"
-              style={{
-                width: "1px",
-                backgroundImage:
-                  "linear-gradient(to bottom, #0b0c10 0%, #545d78 25%, #545d78 51%, #545d78 75%, #0b0c10 100%)",
-              }}
-            />
-
             {/* Diagram */}
-            <div className="flex-1 flex items-start">
-              <div className="sticky top-4 w-full max-h-full h-[95vh] flex items-center justify-center">
+            <div className="col-span-12 md:col-span-7 lg:col-span-8 ">
+              <div className="sticky top-0 h-screen flex items-center justify-center">
                 <Architecture />
               </div>
             </div>
