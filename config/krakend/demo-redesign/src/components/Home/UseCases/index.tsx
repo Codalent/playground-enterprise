@@ -1,6 +1,7 @@
 import userCases from "@/data/krakend.json";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+
 const UseCases = () => {
   const [useCases, setUseCases] = useState<any>({});
 
@@ -56,7 +57,7 @@ const UseCases = () => {
                       key={`${useCase.custom_fields.slug}-${index}`}
                       style={{ background: "#272B3A" }}
                     >
-                      {useCase.title}
+                      {useCase["@comment"]}
                     </Link>
                   );
                 })}
@@ -76,7 +77,7 @@ const UseCases = () => {
               className="text-white text-base p-3 rounded-md hover:outline hover:outline-brand-neutral-300 transition-colors shadow-md break-words"
               style={{ background: "#272B3A" }}
             >
-              {useCase.title}
+              {useCase["@comment"]}
             </Link>
           );
         })}
