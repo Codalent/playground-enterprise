@@ -52,7 +52,7 @@ const UseCases = () => {
                   return (
                     <Link
                       href={`/use-cases/${useCase.custom_fields.slug}`}
-                      className="text-white text-base p-3 rounded-md hover:outline hover:outline-brand-neutral-300 transition-colors shadow-md"
+                      className="text-white text-base p-3 rounded-md hover:outline hover:outline-brand-neutral-300 transition-colors shadow-md break-words"
                       key={`${useCase.custom_fields.slug}-${index}`}
                       style={{ background: "#272B3A" }}
                     >
@@ -73,7 +73,7 @@ const UseCases = () => {
             <Link
               href={`/use-cases/${useCase.custom_fields.slug}`}
               key={`others-${useCase.custom_fields.slug}-${index}`}
-              className="text-white text-base p-3 rounded-md hover:outline hover:outline-brand-neutral-300 transition-colors shadow-md"
+              className="text-white text-base p-3 rounded-md hover:outline hover:outline-brand-neutral-300 transition-colors shadow-md break-words"
               style={{ background: "#272B3A" }}
             >
               {useCase.title}
