@@ -1,11 +1,12 @@
 import Layout from "@/components/Layout";
 import { Integration, UseCases } from "@/components/Home";
-import Architecture from "@/components/Architecture";
+// import Architecture from "@/components/Architecture";
 import BGPurplePattern from "@/image/background/bg-pattern-purple.webp";
 import Image from "next/image";
 import Link from "next/link";
 import { FC, useState } from "react";
 import data from "@/data/krakend.json";
+import Architecture from "@/image/architecture.svg";
 
 const Index = ({ useCases }) => {
   const [currentTab, setCurrentTab] = useState("use-cases");
