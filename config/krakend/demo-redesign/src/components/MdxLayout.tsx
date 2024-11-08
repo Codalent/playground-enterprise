@@ -35,14 +35,8 @@ export default function MdxLayout({
     return slug === useCaseSlug;
   });
 
-  console.log(currentUseCase);
-
   const tag = currentUseCase?.["@comment"].split(":")[0].trim();
   const name = currentUseCase?.["@comment"].split(":")[1].trim();
-
-  if (!currentUseCase) {
-    return <p>Use-Case not found</p>;
-  }
 
   useEffect(() => {
     Prism.highlightAll();
@@ -57,6 +51,10 @@ export default function MdxLayout({
       })
       .catch((err) => console.error("Failed to copy!", err));
   };
+
+  if (!currentUseCase) {
+    return <p>Use-Case not found</p>;
+  }
 
   return (
     <>
